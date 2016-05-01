@@ -3,8 +3,6 @@ package au.com.roc.nlexample.web;
 import java.util.List;
 import java.util.Map;
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +34,7 @@ public class WebController {
 	}
 
 	@RequestMapping(value = "/record/{borrowerID}", method = RequestMethod.GET)
-	@ResponseBody
+	@ResponseBody //return Json format data
 	public List<BorrowRecord> getBorrowRecords(@PathVariable("borrowerID") int borrowerID) {
 
 		List<BorrowRecord> borrowRecords = borrowerService.getBorrowRecords(borrowerID);
